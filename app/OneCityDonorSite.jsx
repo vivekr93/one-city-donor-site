@@ -20,11 +20,11 @@ const c = {
 // ─── Embedded images ──────────────────────────────────────────────────────────
 const IMGS = {
   ufli:             "https://cdn.sanity.io/images/q2b9xvlh/production/a4aa622146ab6aa68c18f99c4c2d1f21a02081aa-250x77.svg",
-  holly:            "https://your-cdn.com/images/holly-lane.jpg",
-  viv:              "https://your-cdn.com/images/viv-ramakrishnan.jpg",
-  oneCity:          "https://projectread.imgix.net/media/46d80b8b-fdb4-45ef-86d2-d5efbb54f5a1.png?auto=format%2Ccompress",
-  projectReadGreen: "data:image/png;base64,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",
-  projectReadWhite: "data:image/png;base64,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",
+  holly:            "/holly-lane.png",
+  viv:              "/viv-ramakrishnan.png",
+  oneCity:          "/one-city-logo-color.png",
+  projectReadGreen: "/project-read-logo.png",
+  projectReadWhite: "/project-read-logo.png",
 };
 
 // ─── Seeded PRNG for deterministic scatter plots ──────────────────────────────
@@ -97,7 +97,7 @@ function UFLIBadge({ dark = false }) {
 function ProjectReadBadge({ dark = false }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-      <img src={dark ? IMGS.projectReadGreen : IMGS.projectReadWhite} alt="Project Read AI logo" style={{
+      <img src={IMGS.projectReadGreen} alt="Project Read AI logo" style={{
         height: 44, objectFit: "contain", borderRadius: 8,
       }} />
       <div>
@@ -442,8 +442,48 @@ function Calculator() {
         ))}
       </div>
       <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, marginTop: 14, marginBottom: 0, textAlign: "center" }}>
-        Anonymous match available 2025-26 and 2026-27 only. Every dollar doubled until $2.5M is raised.
+        This is a binary match — if $2.5M is raised by June 30, 2026, an anonymous donor unlocks the full $2.5M. Miss the goal, and the match is lost.
       </p>
+    </div>
+  );
+}
+
+// ─── Match progress bar ────────────────────────────────────────────────────────
+const MATCH_RAISED = 800000;
+const MATCH_GOAL   = 2500000;
+
+function MatchProgress() {
+  const pct = Math.round((MATCH_RAISED / MATCH_GOAL) * 100);
+  const fmt = (n) => n >= 1000000 ? `$${(n / 1000000).toFixed(1)}M` : `$${(n / 1000).toFixed(0)}K`;
+  const remaining = MATCH_GOAL - MATCH_RAISED;
+  return (
+    <div style={{ margin: "22px 0 4px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 7 }}>
+        <div>
+          <span style={{ color: c.yellow, fontWeight: 900, fontSize: 20, fontFamily: "'Oswald', sans-serif" }}>{fmt(MATCH_RAISED)}</span>
+          <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 12, marginLeft: 6, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>raised toward goal</span>
+        </div>
+        <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 12, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          {fmt(remaining)} remaining · Goal: {fmt(MATCH_GOAL)}
+        </div>
+      </div>
+      <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 99, height: 18, overflow: "hidden", position: "relative" }}>
+        <div style={{
+          width: `${pct}%`, height: "100%", borderRadius: 99,
+          background: `linear-gradient(90deg, ${c.yellow} 0%, #f5a700 100%)`,
+          transition: "width 1s ease",
+          position: "relative",
+        }}>
+          <span style={{
+            position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)",
+            fontSize: 10, fontWeight: 800, color: c.navy, fontFamily: "'Oswald', sans-serif", whiteSpace: "nowrap",
+          }}>{pct}%</span>
+        </div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", marginTop: 5 }}>
+        <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 10.5, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>$0</span>
+        <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 10.5, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>$2.5M match unlocks</span>
+      </div>
     </div>
   );
 }
@@ -621,7 +661,7 @@ const CONTENT = {
         <Quote
           text="UFLI is partnering with One City as a model demonstration site. One City's approach isn't just effective locally. It's a blueprint for closing achievement gaps nationally."
           name="Dr. Holly Lane"
-          title="Director, University of Florida Literacy Institute · Author of UFLI Foundations · Congressional Testimony, February 10, 2026"
+          title="Director, University of Florida Literacy Institute"
           photo={IMGS.holly}
         />
       </Sec>
@@ -675,7 +715,7 @@ const CONTENT = {
         <Quote
           text="It's no exaggeration to say that the most cutting-edge and scalable work in literacy and artificial intelligence is happening at One City Schools, for the students that need it most."
           name="Vivek Ramakrishnan"
-          title="Co-founder, Project Read AI · 240,000+ classrooms · 115+ countries"
+          title="Co-founder, Project Read AI"
           photo={IMGS.viv}
         />
       </Sec>
@@ -719,18 +759,19 @@ const CONTENT = {
           <ImpactCard icon={EMOJI.building} text="Bridges to Demonstration School legislation and long-term sustainable public funding" />
         </div>
         <div style={{ background: c.navy, borderRadius: 18, padding: "26px 30px", textAlign: "center" }}>
-          <p style={{ color: c.white, fontSize: 17.5, fontWeight: 700, lineHeight: 1.6, margin: "0 0 20px 0", fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          <p style={{ color: c.white, fontSize: 17.5, fontWeight: 700, lineHeight: 1.6, margin: "0 0 16px 0", fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
             The data proves it works.<br />
             The match proves this moment matters.<br />
             <span style={{ color: c.yellow }}>Your investment proves we value what closes gaps.</span>
           </p>
+          <MatchProgress />
           <a href="https://www.onecityschools.org/donate" target="_blank" rel="noopener noreferrer"
             style={{
               display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 900, fontSize: 16,
               padding: "14px 36px", borderRadius: 11, textDecoration: "none", fontFamily: "'Oswald', sans-serif",
-              letterSpacing: "1px", textTransform: "uppercase",
+              letterSpacing: "1px", textTransform: "uppercase", marginTop: 20,
             }}>
-            Make a Gift {"\u2192"}
+            Help Unlock the Match {"\u2192"}
           </a>
           <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 11.5, marginTop: 13 }}>
             Questions? Contact Gail Wiseman, External Relations · (608) 514-6119
@@ -794,13 +835,14 @@ export default function App() {
       }}>
         <div style={{
           maxWidth: 980, margin: "0 auto", display: "flex", alignItems: "center",
-          justifyContent: "space-between", padding: "10px 0", gap: 8,
+          justifyContent: "space-between", padding: "6px 0", gap: 8,
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}>
-            <img src={IMGS.oneCity} alt="One City Schools" style={{
-              height: 40, objectFit: "contain",
-              filter: "brightness(0) invert(1)",
-            }} />
+            <a href="https://www.onecityschools.org" target="_blank" rel="noopener noreferrer">
+              <img src={IMGS.oneCity} alt="One City Schools" style={{
+                height: 104, objectFit: "contain",
+              }} />
+            </a>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
             {active && (
@@ -815,7 +857,7 @@ export default function App() {
                 background: c.yellow, color: c.navy, padding: "8px 16px", borderRadius: 8,
                 fontWeight: 800, fontSize: 12.5, textDecoration: "none", fontFamily: "'Oswald', sans-serif",
                 letterSpacing: "0.5px", textTransform: "uppercase", whiteSpace: "nowrap",
-              }}>Donate</a>
+              }}>Help Unlock the Match</a>
           </div>
         </div>
       </nav>
@@ -831,7 +873,7 @@ export default function App() {
                 fontSize: 10.5, letterSpacing: 2.2, textTransform: "uppercase", padding: "5px 14px",
                 borderRadius: 20, marginBottom: 16, fontFamily: "'Museo Slab', 'Rockwell', serif",
               }}>
-                A MATCHED GIVING OPPORTUNITY · 2025 – 2027
+                BINARY MATCH · UNLOCK $2.5M BY JUNE 30, 2026
               </div>
               <h1 style={{
                 fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 900, color: c.navy, fontFamily: "'Oswald', sans-serif",
@@ -853,17 +895,27 @@ export default function App() {
 
               {/* Partner logos */}
               <div style={{
-                display: "inline-flex", alignItems: "center", gap: 24, flexWrap: "wrap",
-                justifyContent: "center", background: c.white, border: `1.5px solid ${c.border}`,
-                borderRadius: 16, padding: "16px 28px", maxWidth: 540,
+                display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 12,
+                background: c.white, border: `1.5px solid ${c.border}`,
+                borderRadius: 16, padding: "20px 36px",
               }}>
                 <div style={{
                   color: c.slate, fontSize: 10.5, fontWeight: 700, letterSpacing: 0.8,
-                  textTransform: "uppercase", width: "100%", textAlign: "center", marginBottom: 2,
+                  textTransform: "uppercase",
                 }}>In Partnership With</div>
-                <UFLIBadge />
-                <div style={{ width: 1, height: 38, background: c.border, flexShrink: 0 }} />
-                <ProjectReadBadge />
+                <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
+                  <div style={{ textAlign: "right", minWidth: 140 }}>
+                    <div style={{ fontWeight: 800, color: c.navy, fontSize: 14, lineHeight: 1.3, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>University of Florida</div>
+                    <div style={{ color: c.slate, fontSize: 12, fontWeight: 500 }}>Literacy Institute</div>
+                    <div style={{ color: c.blue, fontSize: 11, fontWeight: 600, marginTop: 3 }}>700,000+ classrooms</div>
+                  </div>
+                  <img src={IMGS.ufli} alt="UFLI logo" style={{ width: 180, height: 180, objectFit: "contain", flexShrink: 0 }} />
+                  <div style={{ textAlign: "left", minWidth: 140 }}>
+                    <div style={{ fontWeight: 800, color: c.navy, fontSize: 14, lineHeight: 1.3, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>Project Read</div>
+                    <div style={{ color: c.slate, fontSize: 12, fontWeight: 500 }}>AI Phonics Tutor</div>
+                    <div style={{ color: c.green, fontSize: 11, fontWeight: 600, marginTop: 3 }}>240,000+ classrooms</div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -887,13 +939,13 @@ export default function App() {
                 <Quote compact
                   text="UFLI is partnering with One City as a model demonstration site. One City's approach isn't just effective locally. It's a blueprint for closing achievement gaps nationally."
                   name="Dr. Holly Lane"
-                  title="Director, UFLI · Author of UFLI Foundations · Congressional Testimony, February 10, 2026"
+                  title="Director, University of Florida Literacy Institute"
                   photo={IMGS.holly}
                 />
                 <Quote compact
                   text="It's no exaggeration to say that the most cutting-edge and scalable work in literacy and artificial intelligence is happening at One City Schools."
                   name="Vivek Ramakrishnan"
-                  title="Co-founder, Project Read AI · 240,000+ classrooms · 115+ countries"
+                  title="Co-founder, Project Read AI"
                   photo={IMGS.viv}
                 />
               </div>
@@ -904,16 +956,17 @@ export default function App() {
               <div style={{
                 color: c.yellow, fontWeight: 700, fontSize: 11, letterSpacing: 1.5,
                 textTransform: "uppercase", marginBottom: 9, fontFamily: "'Museo Slab', 'Rockwell', serif",
-              }}>Limited Time Match</div>
-              <p style={{ color: c.white, fontSize: 17, fontWeight: 700, margin: "0 0 16px 0", fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
-                An anonymous donor will match every dollar raised up to $2.5M — for 2025-26 and 2026-27.
+              }}>Binary Match · Deadline: June 30, 2026</div>
+              <p style={{ color: c.white, fontSize: 17, fontWeight: 700, margin: "0 0 4px 0", fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+                Raise $2.5M by June 30, 2026 and an anonymous donor unlocks a full $2.5M match — a binary unlock, not a rolling match.
               </p>
+              <MatchProgress />
               <a href="https://www.onecityschools.org/donate" target="_blank" rel="noopener noreferrer"
                 style={{
                   display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 900, fontSize: 14.5,
                   padding: "12px 32px", borderRadius: 10, textDecoration: "none", fontFamily: "'Oswald', sans-serif",
-                  letterSpacing: "1px", textTransform: "uppercase",
-                }}>Make a Gift {"\u2192"}</a>
+                  letterSpacing: "1px", textTransform: "uppercase", marginTop: 16,
+                }}>Help Unlock the Match {"\u2192"}</a>
             </div>
           </>
         ) : (
