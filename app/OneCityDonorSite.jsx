@@ -879,18 +879,12 @@ export default function App() {
               <div style={{ textAlign: "center", marginBottom: 32 }}>
                 <h1 style={{
                   fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 700, color: c.navy, fontFamily: "'Inter', sans-serif",
-                  lineHeight: 1.1, margin: "0 0 12px 0", letterSpacing: "-0.03em",
+                  lineHeight: 1.1, margin: "0 0 0 0", letterSpacing: "-0.03em",
                   fontFeatureSettings: '"cv01", "cv02"',
                 }}>
                   The School Where <span style={{ color: c.blue }}>Literacy Breakthroughs</span><br />
                   are <span style={{ color: c.blue }}>Piloted, Proven, and Scaled</span>
                 </h1>
-                <p style={{
-                  fontSize: "clamp(15px, 2vw, 18px)", color: c.slate, fontFamily: "'Inter', sans-serif",
-                  lineHeight: 1.5, margin: 0, fontWeight: 400,
-                }}>
-                  Only <strong style={{ color: c.red }}>30%</strong> of 4th graders nationally can read at grade level. 4th grade literacy strongly predicts individual lifetime earnings, incarceration risk, and other key outcomes.
-                </p>
               </div>
 
               {/* Two-column: left = subheading + stats + partners, right = Short + doc link */}
@@ -898,8 +892,11 @@ export default function App() {
 
                 {/* Left column */}
                 <div style={{ flex: "1 1 380px" }}>
+                  <p style={{ color: c.slate, fontSize: 16.5, lineHeight: 1.72, margin: "0 0 12px 0", fontFamily: "'Inter', sans-serif" }}>
+                    Only <strong style={{ color: c.red }}>30%</strong> of 4th graders nationally can read at grade level. 4th grade literacy strongly predicts individual lifetime earnings, incarceration risk, and other key outcomes.
+                  </p>
                   <p style={{ color: c.slate, fontSize: 16.5, lineHeight: 1.72, margin: "0 0 8px 0", fontFamily: "'Inter', sans-serif" }}>
-                    One City Schools is a <strong style={{ color: c.navy, fontWeight: 600 }}>R&amp;D-focused public charter school</strong> in Madison, Wisconsin focused on solving this challenge. It is the lab school that incubated Project Read and where UFLI AI,{" "}
+                    One City Schools is a <strong style={{ color: c.navy, fontWeight: 600 }}>R&amp;D-focused public charter school</strong> in Madison, Wisconsin taking on this challenge at scale with the help of artificial intelligence. It is the lab school that incubated Project Read's AI Tutor and where UFLI AI,{" "}
                     <strong style={{ color: c.navy, fontWeight: 600 }}>the next generation of the world's most widely-adopted phonics program</strong>, is being built.
                   </p>
                   <div style={{
