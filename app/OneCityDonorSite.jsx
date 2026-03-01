@@ -86,7 +86,7 @@ function UFLIBadge({ dark = false }) {
         filter: dark ? "brightness(0) invert(1)" : "none",
       }} />
       <div>
-        <div style={{ fontWeight: 800, color: dark ? c.white : c.navy, fontSize: 13, lineHeight: 1.2, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>University of Florida</div>
+        <div style={{ fontWeight: 800, color: dark ? c.white : c.navy, fontSize: 13, lineHeight: 1.2, fontFamily: "'Inter', sans-serif" }}>University of Florida</div>
         <div style={{ color: dark ? "rgba(255,255,255,0.65)" : c.slate, fontSize: 11, fontWeight: 500 }}>Literacy Institute</div>
         <div style={{ color: dark ? c.yellow : c.blue, fontSize: 10, fontWeight: 600, marginTop: 1 }}>700,000+ classrooms</div>
       </div>
@@ -101,7 +101,7 @@ function ProjectReadBadge({ dark = false }) {
         height: 44, objectFit: "contain", borderRadius: 8,
       }} />
       <div>
-        <div style={{ fontWeight: 800, color: dark ? c.white : c.navy, fontSize: 13, lineHeight: 1.2, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>Project Read AI</div>
+        <div style={{ fontWeight: 800, color: dark ? c.white : c.navy, fontSize: 13, lineHeight: 1.2, fontFamily: "'Inter', sans-serif" }}>Project Read AI</div>
         <div style={{ color: dark ? "rgba(255,255,255,0.65)" : c.slate, fontSize: 11, fontWeight: 500 }}>AI Phonics Tutor</div>
         <div style={{ color: dark ? c.yellow : c.green, fontSize: 10, fontWeight: 600, marginTop: 1 }}>240,000+ classrooms · 115+ countries</div>
       </div>
@@ -129,19 +129,19 @@ function Num({ n, suffix = "", prefix = "", dec = 0, ms = 1400 }) {
 }
 
 // ─── Stat tile ────────────────────────────────────────────────────────────────
-function Stat({ n, suffix = "", prefix = "", dec = 0, label, sub, bg = c.blue, accent = c.yellow, large = false }) {
+function Stat({ n, suffix = "", prefix = "", dec = 0, label, sub, bg = c.blue, accent = c.yellow, labelColor = c.white, large = false }) {
   return (
     <div style={{
       background: bg, borderRadius: 16, padding: large ? "26px 22px" : "20px 18px",
-      textAlign: "center", flex: 1, minWidth: 130,
+      textAlign: "center", flex: 1, minWidth: 130, border: `1.5px solid ${c.border}`,
     }}>
       <div style={{
-        fontSize: large ? 44 : 38, fontWeight: 900, color: accent, lineHeight: 1,
-        fontFamily: "'Oswald', sans-serif", letterSpacing: "-1px",
+        fontSize: large ? 44 : 38, fontWeight: 800, color: accent, lineHeight: 1,
+        fontFamily: "'Inter', sans-serif", letterSpacing: "-0.03em",
       }}>
         <Num n={n} suffix={suffix} prefix={prefix} dec={dec} />
       </div>
-      <div style={{ color: c.white, fontWeight: 700, fontSize: 13, marginTop: 7, lineHeight: 1.35, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>{label}</div>
+      <div style={{ color: labelColor, fontWeight: 700, fontSize: 13, marginTop: 7, lineHeight: 1.35, fontFamily: "'Inter', sans-serif" }}>{label}</div>
       {sub && <div style={{ color: "rgba(255,255,255,0.6)", fontSize: 11, marginTop: 3 }}>{sub}</div>}
     </div>
   );
@@ -160,8 +160,8 @@ function Bar({ label, value, color, dark = false }) {
   return (
     <div ref={ref} style={{ marginBottom: 12 }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
-        <span style={{ fontSize: 13, fontWeight: 600, color: dark ? "rgba(255,255,255,0.85)" : c.navy, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>{label}</span>
-        <span style={{ fontSize: 14, fontWeight: 800, color }}>{value}%</span>
+        <span style={{ fontSize: 13, fontWeight: 600, color: dark ? "rgba(255,255,255,0.85)" : c.navy, fontFamily: "'Inter', sans-serif" }}>{label}</span>
+        <span style={{ fontSize: 14, fontWeight: 600, color }}>{value}%</span>
       </div>
       <div style={{ background: dark ? "rgba(255,255,255,0.1)" : "#D8E8F8", borderRadius: 6, height: 10, overflow: "hidden" }}>
         <div style={{
@@ -188,7 +188,7 @@ function ScatterPlot({ title, subtitle, others, ocX, ocY, callout, calloutSub })
       background: c.white, border: `1.5px solid ${c.border}`, borderRadius: 16,
       padding: "18px 18px 14px", flex: 1, minWidth: 270,
     }}>
-      <div style={{ fontWeight: 800, color: c.navy, fontSize: 14, marginBottom: 2, fontFamily: "'Oswald', sans-serif", textTransform: "uppercase", letterSpacing: "0.5px" }}>{title}</div>
+      <div style={{ fontWeight: 800, color: c.navy, fontSize: 14, marginBottom: 2, fontFamily: "'Inter', sans-serif", letterSpacing: "-0.01em" }}>{title}</div>
       <div style={{ fontSize: 11, color: c.slate, marginBottom: 8 }}>{subtitle}</div>
       <svg width="100%" viewBox={`0 0 ${VW} ${VH}`} style={{ overflow: "visible" }} role="img" aria-label={`${title}: scatter plot showing ${callout} ${calloutSub}`}>
         {[0, 25, 50, 75, 100].map(v => (
@@ -238,8 +238,8 @@ function ScatterPlot({ title, subtitle, others, ocX, ocY, callout, calloutSub })
         </div>
       </div>
       <div style={{ background: c.yellow, borderRadius: 10, padding: "10px 14px", marginTop: 12, textAlign: "center" }}>
-        <div style={{ fontSize: 24, fontWeight: 900, color: c.navy, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>{callout}</div>
-        <div style={{ fontSize: 11, fontWeight: 700, color: c.navy, marginTop: 3, lineHeight: 1.35, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>{calloutSub}</div>
+        <div style={{ fontSize: 24, fontWeight: 700, color: c.navy, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>{callout}</div>
+        <div style={{ fontSize: 11, fontWeight: 700, color: c.navy, marginTop: 3, lineHeight: 1.35, fontFamily: "'Inter', sans-serif" }}>{calloutSub}</div>
       </div>
     </div>
   );
@@ -258,7 +258,7 @@ function Quote({ text, name, title, compact = false, photo = null }) {
       }}>{"\u201C"}</div>
       <p style={{
         color: c.white, fontSize: compact ? 14.5 : 17, lineHeight: 1.68, fontStyle: "italic",
-        margin: "0 0 16px 0", position: "relative", zIndex: 1, fontFamily: "'Museo Slab', 'Rockwell', serif",
+        margin: "0 0 16px 0", position: "relative", zIndex: 1, fontFamily: "'Inter', sans-serif",
       }}>{text}</p>
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.13)", paddingTop: 12, display: "flex", alignItems: "center", gap: 12 }}>
         {photo && (
@@ -268,7 +268,7 @@ function Quote({ text, name, title, compact = false, photo = null }) {
           }} />
         )}
         <div>
-          <div style={{ color: c.yellow, fontWeight: 700, fontSize: 13, fontFamily: "'Oswald', sans-serif", textTransform: "uppercase", letterSpacing: "0.5px" }}>{name}</div>
+          <div style={{ color: c.yellow, fontWeight: 700, fontSize: 13, fontFamily: "'Inter', sans-serif", letterSpacing: "0" }}>{name}</div>
           <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 11, marginTop: 2, lineHeight: 1.4 }}>{title}</div>
         </div>
       </div>
@@ -282,8 +282,9 @@ function SH({ title, accent = c.yellow }) {
     <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
       <div style={{ width: 5, height: 30, background: accent, borderRadius: 3 }} />
       <h2 style={{
-        margin: 0, fontSize: 21, fontWeight: 800, color: c.navy,
-        fontFamily: "'Oswald', sans-serif", letterSpacing: "0.5px", textTransform: "uppercase",
+        margin: 0, fontSize: 21, fontWeight: 700, color: c.navy,
+        fontFamily: "'Inter', sans-serif", letterSpacing: "-0.02em",
+        fontFeatureSettings: '"cv01", "cv02"',
       }}>{title}</h2>
     </div>
   );
@@ -329,8 +330,8 @@ function PathBtn({ path, onClick }) {
         {path.icon}
       </div>
       <div style={{ flex: 1 }}>
-        <div style={{ fontWeight: 800, color: c.navy, fontSize: 15, marginBottom: 1, fontFamily: "'Oswald', sans-serif", textTransform: "uppercase", letterSpacing: "0.4px" }}>{path.label}</div>
-        <div style={{ color: c.slate, fontSize: 12.5, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>{path.tagline}</div>
+        <div style={{ fontWeight: 700, color: c.navy, fontSize: 15, marginBottom: 1, fontFamily: "'Inter', sans-serif", letterSpacing: "-0.01em" }}>{path.label}</div>
+        <div style={{ color: c.slate, fontSize: 12.5, fontFamily: "'Inter', sans-serif" }}>{path.tagline}</div>
       </div>
       <div style={{ color: c.blue, fontSize: 17, fontWeight: 700, flexShrink: 0 }}>{"\u2192"}</div>
     </button>
@@ -348,7 +349,7 @@ function ExploreBtn({ path, onClick }) {
         background: c.white, border: `1.5px solid ${hov ? c.blue : c.border}`, borderRadius: 9,
         padding: "8px 14px", cursor: "pointer", fontSize: 12.5, fontWeight: 600, color: c.navy,
         display: "flex", alignItems: "center", gap: 6, transition: "border-color 0.17s",
-        fontFamily: "'Museo Slab', 'Rockwell', serif", outline: "none",
+        fontFamily: "'Inter', sans-serif", outline: "none",
       }}>
       <span>{path.icon}</span> {path.label}
     </button>
@@ -386,7 +387,7 @@ function Pipeline() {
                 boxShadow: i === step ? "0 5px 22px rgba(0,0,0,0.16)" : "none",
                 border: "none", cursor: "pointer", outline: "none",
               }}>
-              <div style={{ color: i <= step ? c.white : "#9BAABB", fontWeight: 800, fontSize: 12.5, lineHeight: 1.3, fontFamily: "'Oswald', sans-serif", textTransform: "uppercase" }}>{s.label}</div>
+              <div style={{ color: i <= step ? c.white : "#9BAABB", fontWeight: 600, fontSize: 12.5, lineHeight: 1.3, fontFamily: "'Inter', sans-serif" }}>{s.label}</div>
               <div style={{
                 color: i <= step ? "rgba(255,255,255,0.72)" : "#B5C5D0", fontSize: 10.5, marginTop: 4,
                 whiteSpace: "pre-line", lineHeight: 1.4,
@@ -400,7 +401,7 @@ function Pipeline() {
           </div>
         ))}
       </div>
-      <p style={{ textAlign: "center", color: c.slate, fontSize: 12.5, marginTop: 18, fontStyle: "italic", fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+      <p style={{ textAlign: "center", color: c.slate, fontSize: 12.5, marginTop: 18, fontStyle: "italic", fontFamily: "'Inter', sans-serif" }}>
         Innovation validated at One City generates evidence that unlocks federal investment and shapes tools used globally.
       </p>
     </div>
@@ -413,7 +414,7 @@ function Calculator() {
   const presets = [10000, 25000, 50000, 100000, 250000];
   return (
     <div style={{ background: c.navy, borderRadius: 20, padding: "28px 32px" }}>
-      <div style={{ color: c.yellow, fontWeight: 800, fontSize: 15, marginBottom: 16, fontFamily: "'Oswald', sans-serif", textTransform: "uppercase", letterSpacing: "0.5px" }}>Your Impact Calculator</div>
+      <div style={{ color: c.yellow, fontWeight: 600, fontSize: 15, marginBottom: 16, fontFamily: "'Inter', sans-serif", letterSpacing: "-0.01em" }}>Your Impact Calculator</div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}>
         {presets.map(p => (
           <button key={p} onClick={() => setGift(p)} style={{
@@ -421,7 +422,7 @@ function Calculator() {
             borderColor: gift === p ? c.yellow : "rgba(255,255,255,0.2)",
             background: gift === p ? c.yellow : "transparent",
             color: gift === p ? c.navy : c.white, fontWeight: 700, fontSize: 12.5, cursor: "pointer", transition: "all 0.18s",
-            fontFamily: "'Museo Slab', 'Rockwell', serif",
+            fontFamily: "'Inter', sans-serif",
           }}>${p.toLocaleString()}</button>
         ))}
       </div>
@@ -433,11 +434,11 @@ function Calculator() {
           { label: "=", val: null, fg: c.yellow, bg: "transparent", small: true },
           { label: "Total Impact", val: `$${(gift * 2).toLocaleString()}`, fg: c.navy, bg: c.yellow },
         ].map((x, i) => x.small ? (
-          <div key={i} style={{ fontSize: 22, color: x.fg, fontWeight: 900 }}>{x.label}</div>
+          <div key={i} style={{ fontSize: 22, color: x.fg, fontWeight: 600 }}>{x.label}</div>
         ) : (
           <div key={i} style={{ flex: 1, minWidth: 100, background: x.bg, borderRadius: 11, padding: "16px 18px", textAlign: "center" }}>
-            <div style={{ fontSize: 11, color: x.bg === c.yellow ? c.navy : "rgba(255,255,255,0.5)", marginBottom: 4, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>{x.label}</div>
-            <div style={{ fontSize: 28, fontWeight: 900, color: x.fg, fontFamily: "'Oswald', sans-serif" }}>{x.val}</div>
+            <div style={{ fontSize: 11, color: x.bg === c.yellow ? c.navy : "rgba(255,255,255,0.5)", marginBottom: 4, fontFamily: "'Inter', sans-serif" }}>{x.label}</div>
+            <div style={{ fontSize: 28, fontWeight: 700, color: x.fg, fontFamily: "'Inter', sans-serif" }}>{x.val}</div>
           </div>
         ))}
       </div>
@@ -460,10 +461,10 @@ function MatchProgress() {
     <div style={{ margin: "22px 0 4px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 7 }}>
         <div>
-          <span style={{ color: c.yellow, fontWeight: 900, fontSize: 20, fontFamily: "'Oswald', sans-serif" }}>{fmt(MATCH_RAISED)}</span>
-          <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 12, marginLeft: 6, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>raised toward goal</span>
+          <span style={{ color: c.yellow, fontWeight: 700, fontSize: 20, fontFamily: "'Inter', sans-serif" }}>{fmt(MATCH_RAISED)}</span>
+          <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 12, marginLeft: 6, fontFamily: "'Inter', sans-serif" }}>raised toward goal</span>
         </div>
-        <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 12, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+        <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 12, fontFamily: "'Inter', sans-serif" }}>
           {fmt(remaining)} remaining · Goal: {fmt(MATCH_GOAL)}
         </div>
       </div>
@@ -476,13 +477,13 @@ function MatchProgress() {
         }}>
           <span style={{
             position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)",
-            fontSize: 10, fontWeight: 800, color: c.navy, fontFamily: "'Oswald', sans-serif", whiteSpace: "nowrap",
+            fontSize: 10, fontWeight: 600, color: c.navy, fontFamily: "'Inter', sans-serif", whiteSpace: "nowrap",
           }}>{pct}%</span>
         </div>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", marginTop: 5 }}>
-        <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 10.5, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>$0</span>
-        <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 10.5, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>$2.5M match unlocks</span>
+        <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 10.5, fontFamily: "'Inter', sans-serif" }}>$0</span>
+        <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 10.5, fontFamily: "'Inter', sans-serif" }}>$2.5M match unlocks</span>
       </div>
     </div>
   );
@@ -493,8 +494,8 @@ function IconCard({ icon, label, text }) {
   return (
     <div style={{ flex: 1, minWidth: 175, background: c.lightBlue, borderRadius: 13, padding: "18px", borderTop: `4px solid ${c.blue}` }}>
       <div style={{ fontSize: 26, marginBottom: 8 }}>{icon}</div>
-      <div style={{ fontWeight: 800, color: c.navy, fontSize: 13.5, marginBottom: 5, fontFamily: "'Oswald', sans-serif", textTransform: "uppercase" }}>{label}</div>
-      <div style={{ color: c.slate, fontSize: 12.5, lineHeight: 1.5, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>{text}</div>
+      <div style={{ fontWeight: 600, color: c.navy, fontSize: 13.5, marginBottom: 5, fontFamily: "'Inter', sans-serif" }}>{label}</div>
+      <div style={{ color: c.slate, fontSize: 12.5, lineHeight: 1.5, fontFamily: "'Inter', sans-serif" }}>{text}</div>
     </div>
   );
 }
@@ -507,7 +508,7 @@ function ImpactCard({ icon, text }) {
       padding: "16px 18px", display: "flex", gap: 11, alignItems: "flex-start",
     }}>
       <div style={{ fontSize: 24, flexShrink: 0 }}>{icon}</div>
-      <div style={{ color: c.navy, fontSize: 13.5, lineHeight: 1.5, fontWeight: 500, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>{text}</div>
+      <div style={{ color: c.navy, fontSize: 13.5, lineHeight: 1.5, fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>{text}</div>
     </div>
   );
 }
@@ -527,17 +528,17 @@ const CONTENT = {
     <>
       <Sec title="A National Crisis, Worst Here" accent={c.orange}>
         <div style={{ background: c.orange, borderRadius: 14, padding: "24px 28px", marginBottom: 20 }}>
-          <div style={{ fontSize: 50, fontWeight: 900, color: c.white, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>70%</div>
-          <div style={{ color: c.white, fontSize: 18, fontWeight: 700, marginTop: 6, fontFamily: "'Oswald', sans-serif" }}>of all 4th graders nationwide read below grade level</div>
-          <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 13.5, marginTop: 6, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>One of the strongest predictors of lifetime earnings and incarceration rates</div>
+          <div style={{ fontSize: 50, fontWeight: 800, color: c.white, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>70%</div>
+          <div style={{ color: c.white, fontSize: 18, fontWeight: 600, marginTop: 6, fontFamily: "'Inter', sans-serif" }}>of all 4th graders nationwide read below grade level</div>
+          <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 13.5, marginTop: 6, fontFamily: "'Inter', sans-serif" }}>One of the strongest predictors of lifetime earnings and incarceration rates</div>
         </div>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
           <Stat n={45} suffix="-pt" label="Black-White reading gap" sub="4th grade, national" bg={c.navy} />
           <Stat n={38} suffix="-pt" label="Black-White math gap" sub="8th grade, national" bg={c.navy} />
         </div>
         <div style={{ background: c.lightBlue, borderRadius: 14, padding: "24px 28px", borderLeft: `5px solid ${c.orange}` }}>
-          <h3 style={{ margin: "0 0 12px 0", color: c.navy, fontSize: 16, fontWeight: 800, fontFamily: "'Oswald', sans-serif", textTransform: "uppercase" }}>Wisconsin: Ground Zero</h3>
-          <p style={{ margin: "0 0 16px 0", color: c.slate, fontSize: 13.5, lineHeight: 1.65, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          <h3 style={{ margin: "0 0 12px 0", color: c.navy, fontSize: 16, fontWeight: 700, fontFamily: "'Inter', sans-serif" }}>Wisconsin: Ground Zero</h3>
+          <p style={{ margin: "0 0 16px 0", color: c.slate, fontSize: 13.5, lineHeight: 1.65, fontFamily: "'Inter', sans-serif" }}>
             Wisconsin ranks <strong style={{ color: c.orange }}>3rd lowest nationally</strong> for Black 4th grade reading proficiency.
             Only 8% of Black 4th graders read proficiently — vs. 54% of white students. A 46-point gap, 4th largest in the nation.
           </p>
@@ -547,7 +548,7 @@ const CONTENT = {
         </div>
       </Sec>
       <Sec title="Wisconsin Schools: One City as the Outlier" accent={c.blue}>
-        <p style={{ color: c.slate, fontSize: 13.5, lineHeight: 1.65, marginBottom: 18, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+        <p style={{ color: c.slate, fontSize: 13.5, lineHeight: 1.65, marginBottom: 18, fontFamily: "'Inter', sans-serif" }}>
           The charts below plot every Madison-area school's academic growth percentile against the share of Black students enrolled.
           The dashed trend line reveals a troubling pattern: more Black students typically means lower growth scores.
           One City is the clear exception — high Black enrollment, top-tier growth.
@@ -569,7 +570,7 @@ const CONTENT = {
     <>
       <Sec title="The Teaching Hospital Model">
         <div style={{ background: c.navy, borderRadius: 18, padding: "28px 32px", marginBottom: 20, color: c.white }}>
-          <p style={{ fontSize: 17.5, lineHeight: 1.7, margin: 0, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          <p style={{ fontSize: 17.5, lineHeight: 1.7, margin: 0, fontFamily: "'Inter', sans-serif" }}>
             Teaching hospitals train the next generation of physicians <em>while</em> delivering cutting-edge care to real patients.
             One City operates on the same principle — a publicly accountable school where{" "}
             <strong style={{ color: c.yellow }}>real students with real needs drive real innovation</strong>,
@@ -586,7 +587,7 @@ const CONTENT = {
       <Sec title="Who One City Serves">
         <div style={{ background: c.navy, borderRadius: 18, padding: "26px 30px", display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center", marginBottom: 16 }}>
           <div style={{ textAlign: "center", flexShrink: 0 }}>
-            <div style={{ fontSize: 58, fontWeight: 900, color: c.yellow, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>400</div>
+            <div style={{ fontSize: 58, fontWeight: 800, color: c.yellow, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>400</div>
             <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 12.5, marginTop: 3 }}>Current Scholars</div>
             <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 11, marginTop: 2 }}>Tuition-free · Open to all WI students</div>
           </div>
@@ -598,7 +599,7 @@ const CONTENT = {
             <Bar label="Special Education" value={17} color={c.yellow} dark />
           </div>
         </div>
-        <p style={{ color: c.slate, fontSize: 13.5, lineHeight: 1.7, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+        <p style={{ color: c.slate, fontSize: 13.5, lineHeight: 1.7, fontFamily: "'Inter', sans-serif" }}>
           When innovation succeeds here — alongside students facing the steepest barriers — it's proven for the students who need it most everywhere.
         </p>
       </Sec>
@@ -609,30 +610,30 @@ const CONTENT = {
     <>
       <Sec title="Student Outcomes">
         <div style={{ background: c.blue, borderRadius: 18, padding: "28px 32px", marginBottom: 20, textAlign: "center" }}>
-          <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 14, marginBottom: 12, fontWeight: 600, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 14, marginBottom: 12, fontWeight: 600, fontFamily: "'Inter', sans-serif" }}>
             Black Students Reading Proficiency — One Year
           </div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 18, flexWrap: "wrap" }}>
             <div>
-              <div style={{ fontSize: 70, fontWeight: 900, color: "rgba(255,255,255,0.3)", fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>2%</div>
+              <div style={{ fontSize: 70, fontWeight: 800, color: "rgba(255,255,255,0.3)", fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>2%</div>
               <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 12 }}>Year Start</div>
             </div>
             <div style={{ fontSize: 34, color: c.yellow }}>{"\u2192"}</div>
             <div>
-              <div style={{ fontSize: 70, fontWeight: 900, color: c.yellow, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>21%</div>
+              <div style={{ fontSize: 70, fontWeight: 800, color: c.yellow, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>21%</div>
               <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 12 }}>Year End</div>
             </div>
             <div style={{ background: "rgba(0,0,0,0.16)", borderRadius: 12, padding: "12px 18px", textAlign: "left" }}>
               <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 10.5, marginBottom: 2 }}>vs. Black Students Statewide</div>
-              <div style={{ fontSize: 44, fontWeight: 900, color: c.orange, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>8%</div>
+              <div style={{ fontSize: 44, fontWeight: 700, color: c.orange, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>8%</div>
               <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 10.5 }}>Proficient</div>
             </div>
           </div>
         </div>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
           <div style={{ flex: 1, background: c.yellow, borderRadius: 14, padding: "20px", textAlign: "center" }}>
-            <div style={{ fontSize: 12.5, color: c.navy, fontWeight: 700, marginBottom: 6, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>Latino Reading Proficiency</div>
-            <div style={{ fontSize: 36, fontWeight: 900, color: c.navy, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>16% {"\u2192"} 57%</div>
+            <div style={{ fontSize: 12.5, color: c.navy, fontWeight: 700, marginBottom: 6, fontFamily: "'Inter', sans-serif" }}>Latino Reading Proficiency</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: c.navy, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>16% {"\u2192"} 57%</div>
             <div style={{ fontSize: 11, color: c.navy, opacity: 0.6, marginTop: 5 }}>Two years</div>
           </div>
           <Stat n={98.7} dec={1} suffix="%" label="of WI middle schools outperformed in academic growth" bg={c.navy} />
@@ -650,9 +651,9 @@ const CONTENT = {
       <Sec title="State Recognition" accent={c.blue}>
         <div style={{ background: c.blue, borderRadius: 16, padding: "24px 28px", display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap", marginBottom: 20 }}>
           <div style={{ flex: 1, minWidth: 170 }}>
-            <div style={{ color: c.yellow, fontWeight: 700, fontSize: 11, textTransform: "uppercase", letterSpacing: 1, marginBottom: 6 }}>Wisconsin DPI Report Card</div>
-            <div style={{ fontSize: 30, fontWeight: 900, color: c.white, fontFamily: "'Oswald', sans-serif", lineHeight: 1.1 }}>EXCEEDS EXPECTATIONS</div>
-            <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 13, marginTop: 9, lineHeight: 1.5, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+            <div style={{ color: c.yellow, fontWeight: 700, fontSize: 11, letterSpacing: 1, marginBottom: 6 }}>Wisconsin DPI Report Card</div>
+            <div style={{ fontSize: 30, fontWeight: 700, color: c.white, fontFamily: "'Inter', sans-serif", lineHeight: 1.1 }}>EXCEEDS EXPECTATIONS</div>
+            <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 13, marginTop: 9, lineHeight: 1.5, fontFamily: "'Inter', sans-serif" }}>
               Highest possible rating for two consecutive years — both elementary and middle school.
             </div>
           </div>
@@ -672,7 +673,7 @@ const CONTENT = {
     <>
       <Sec title="One City in a Bigger Ecosystem">
         <div style={{ background: c.navy, borderRadius: 18, padding: "26px 30px", marginBottom: 20 }}>
-          <p style={{ color: c.white, fontSize: 17, lineHeight: 1.7, margin: 0, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          <p style={{ color: c.white, fontSize: 17, lineHeight: 1.7, margin: 0, fontFamily: "'Inter', sans-serif" }}>
             One City isn't just a school. It's <strong style={{ color: c.yellow }}>where the evidence gets made</strong> — the place where the most important
             literacy innovations are developed and validated alongside students who have the most to gain
             and the least margin for error.
@@ -684,9 +685,9 @@ const CONTENT = {
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 24 }}>
           <div style={{ flex: 1, minWidth: 230, background: c.lightBlue, borderRadius: 16, padding: "24px 26px", borderTop: `5px solid ${c.blue}` }}>
             <div style={{ marginBottom: 14 }}><UFLIBadge /></div>
-            <div style={{ fontSize: 36, fontWeight: 900, color: c.blue, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>700,000+</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: c.blue, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>700,000+</div>
             <div style={{ color: c.slate, fontSize: 12, marginTop: 3, marginBottom: 12 }}>classrooms worldwide</div>
-            <p style={{ color: c.slate, fontSize: 13, lineHeight: 1.6, margin: 0, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+            <p style={{ color: c.slate, fontSize: 13, lineHeight: 1.6, margin: 0, fontFamily: "'Inter', sans-serif" }}>
               The most widely adopted phonics program on the planet. One City is UFLI's{" "}
               <strong>designated Midwest hub and training site</strong> — where UFLI's curriculum meets real classrooms
               and where educators across the region are trained.
@@ -694,19 +695,19 @@ const CONTENT = {
           </div>
           <div style={{ flex: 1, minWidth: 230, background: c.lightBlue, borderRadius: 16, padding: "24px 26px", borderTop: `5px solid ${c.green}` }}>
             <div style={{ marginBottom: 14 }}><ProjectReadBadge /></div>
-            <div style={{ fontSize: 36, fontWeight: 900, color: c.green, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>240,000+</div>
+            <div style={{ fontSize: 36, fontWeight: 700, color: c.green, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>240,000+</div>
             <div style={{ color: c.slate, fontSize: 12, marginTop: 3, marginBottom: 4 }}>classrooms</div>
-            <div style={{ fontSize: 24, fontWeight: 900, color: c.green, fontFamily: "'Oswald', sans-serif" }}>115+</div>
+            <div style={{ fontSize: 24, fontWeight: 700, color: c.green, fontFamily: "'Inter', sans-serif" }}>115+</div>
             <div style={{ color: c.slate, fontSize: 12, marginBottom: 12 }}>countries</div>
-            <p style={{ color: c.slate, fontSize: 13, lineHeight: 1.6, margin: 0, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+            <p style={{ color: c.slate, fontSize: 13, lineHeight: 1.6, margin: 0, fontFamily: "'Inter', sans-serif" }}>
               An AI tutor that listens to students read aloud and delivers real-time phonics instruction.
               <strong> Developed and continuously refined at One City Schools.</strong>
             </p>
           </div>
         </div>
         <div style={{ background: "#FFFBEA", borderRadius: 13, padding: "20px 24px", borderLeft: `5px solid ${c.yellow}`, marginBottom: 22 }}>
-          <div style={{ fontWeight: 800, color: c.navy, fontSize: 14.5, marginBottom: 6, fontFamily: "'Oswald', sans-serif", textTransform: "uppercase" }}>The Federal Proof Point</div>
-          <p style={{ color: c.slate, fontSize: 13.5, lineHeight: 1.65, margin: 0, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          <div style={{ fontWeight: 600, color: c.navy, fontSize: 14.5, marginBottom: 6, fontFamily: "'Inter', sans-serif" }}>The Federal Proof Point</div>
+          <p style={{ color: c.slate, fontSize: 13.5, lineHeight: 1.65, margin: 0, fontFamily: "'Inter', sans-serif" }}>
             Research conducted at One City with Dr. Matthew Burns generated fluency growth data rigorous enough to contribute
             to a <strong>US Department of Education grant now funding UFLI's next generation of AI-integrated literacy tools</strong> —
             with One City as a core implementation site. This is what it looks like when a school generates evidence that moves the whole field.
@@ -727,21 +728,21 @@ const CONTENT = {
       <Sec title="Exceptional Results, Inadequate Funding" accent={c.orange}>
         <div style={{ background: c.orange, borderRadius: 14, padding: "24px 28px", marginBottom: 18, display: "flex", gap: 24, flexWrap: "wrap", alignItems: "center" }}>
           <div>
-            <div style={{ fontSize: 42, fontWeight: 900, color: c.white, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>54%</div>
-            <div style={{ color: "rgba(255,255,255,0.9)", fontWeight: 700, fontSize: 13, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>LESS than Madison Metro School District</div>
+            <div style={{ fontSize: 42, fontWeight: 800, color: c.white, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>54%</div>
+            <div style={{ color: "rgba(255,255,255,0.9)", fontWeight: 700, fontSize: 13, fontFamily: "'Inter', sans-serif" }}>LESS than Madison Metro School District</div>
           </div>
           <div>
-            <div style={{ fontSize: 42, fontWeight: 900, color: c.white, fontFamily: "'Oswald', sans-serif", lineHeight: 1 }}>27%</div>
-            <div style={{ color: "rgba(255,255,255,0.9)", fontWeight: 700, fontSize: 13, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>LESS than state average public schools</div>
+            <div style={{ fontSize: 42, fontWeight: 800, color: c.white, fontFamily: "'Inter', sans-serif", lineHeight: 1 }}>27%</div>
+            <div style={{ color: "rgba(255,255,255,0.9)", fontWeight: 700, fontSize: 13, fontFamily: "'Inter', sans-serif" }}>LESS than state average public schools</div>
           </div>
-          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: 13.5, lineHeight: 1.6, margin: 0, flex: 1, minWidth: 170, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          <p style={{ color: "rgba(255,255,255,0.9)", fontSize: 13.5, lineHeight: 1.6, margin: 0, flex: 1, minWidth: 170, fontFamily: "'Inter', sans-serif" }}>
             One City outperforms 98.7% of Wisconsin middle schools on funding that's 54% below the district average.
             <strong style={{ color: c.white }}> 45% of operating costs are covered by philanthropy.</strong>
           </p>
         </div>
         <div style={{ background: c.lightBlue, borderRadius: 13, padding: "20px 24px", marginBottom: 24, borderLeft: `5px solid ${c.blue}` }}>
-          <div style={{ fontWeight: 800, color: c.navy, fontSize: 14.5, marginBottom: 6, fontFamily: "'Oswald', sans-serif", textTransform: "uppercase" }}>The Path to Sustainability</div>
-          <p style={{ color: c.slate, fontSize: 13.5, lineHeight: 1.65, margin: 0, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          <div style={{ fontWeight: 600, color: c.navy, fontSize: 14.5, marginBottom: 6, fontFamily: "'Inter', sans-serif" }}>The Path to Sustainability</div>
+          <p style={{ color: c.slate, fontSize: 13.5, lineHeight: 1.65, margin: 0, fontFamily: "'Inter', sans-serif" }}>
             Demonstration Public School Legislation (AB 818/SB 818) would formally recognize One City as Wisconsin's education innovation lab —
             applying the Wisconsin Idea to K-12 and creating a sustainable, publicly-funded model.
             Your investment bridges operations while that legislation advances.
@@ -759,20 +760,20 @@ const CONTENT = {
           <ImpactCard icon={EMOJI.building} text="Bridges to Demonstration School legislation and long-term sustainable public funding" />
         </div>
         <div style={{ background: c.navy, borderRadius: 18, padding: "26px 30px", textAlign: "center" }}>
-          <p style={{ color: c.white, fontSize: 17.5, fontWeight: 700, lineHeight: 1.6, margin: "0 0 16px 0", fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+          <p style={{ color: c.white, fontSize: 17.5, fontWeight: 700, lineHeight: 1.6, margin: "0 0 16px 0", fontFamily: "'Inter', sans-serif" }}>
             The data proves it works.<br />
             The match proves this moment matters.<br />
             <span style={{ color: c.yellow }}>Your investment proves we value what closes gaps.</span>
           </p>
           <MatchProgress />
-          <a href="https://www.onecityschools.org/donate" target="_blank" rel="noopener noreferrer"
-            style={{
-              display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 900, fontSize: 16,
-              padding: "14px 36px", borderRadius: 11, textDecoration: "none", fontFamily: "'Oswald', sans-serif",
-              letterSpacing: "1px", textTransform: "uppercase", marginTop: 20,
-            }}>
-            Help Unlock the Match {"\u2192"}
-          </a>
+            <a href="https://www.onecityschools.org/donate" target="_blank" rel="noopener noreferrer"
+              style={{
+                display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 700, fontSize: 16,
+                padding: "14px 36px", borderRadius: 11, textDecoration: "none", fontFamily: "'Inter', sans-serif",
+                letterSpacing: "0.01em", marginTop: 20,
+              }}>
+              Help Unlock the Match {"\u2192"}
+            </a>
           <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 11.5, marginTop: 13 }}>
             Questions? Contact Gail Wiseman, External Relations · (608) 514-6119
           </div>
@@ -792,9 +793,13 @@ const PATHS = [
 
 // ─── Global styles (injected once) ────────────────────────────────────────────
 const GLOBAL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
   * { box-sizing: border-box; }
-  body { margin: 0; }
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
   button:focus-visible { outline: 2px solid ${c.yellow}; outline-offset: 2px; }
   a:focus-visible { outline: 2px solid ${c.yellow}; outline-offset: 2px; }
 `;
@@ -802,6 +807,7 @@ const GLOBAL_CSS = `
 export default function App() {
   const [active, setActive] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const [shortPlaying, setShortPlaying] = useState(true);
   const topRef = useRef(null);
   const styleInjected = useRef(false);
 
@@ -826,7 +832,7 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ fontFamily: "'Museo Slab', 'Rockwell', Georgia, serif", background: c.offWhite, minHeight: "100vh" }}>
+    <div style={{ fontFamily: "'Inter', sans-serif", background: c.offWhite, minHeight: "100vh" }}>
 
       {/* NAV */}
       <nav style={{
@@ -849,14 +855,14 @@ export default function App() {
               <button onClick={() => setActive(null)} style={{
                 background: "rgba(255,255,255,0.1)",
                 border: "none", color: c.white, padding: "7px 13px", borderRadius: 7,
-                cursor: "pointer", fontSize: 12, fontWeight: 600, fontFamily: "'Museo Slab', 'Rockwell', serif",
+                cursor: "pointer", fontSize: 12, fontWeight: 600, fontFamily: "'Inter', sans-serif",
               }}>{"\u2190"} Overview</button>
             )}
             <a href="https://www.onecityschools.org/donate" target="_blank" rel="noopener noreferrer"
               style={{
                 background: c.yellow, color: c.navy, padding: "8px 16px", borderRadius: 8,
-                fontWeight: 800, fontSize: 12.5, textDecoration: "none", fontFamily: "'Oswald', sans-serif",
-                letterSpacing: "0.5px", textTransform: "uppercase", whiteSpace: "nowrap",
+                fontWeight: 700, fontSize: 12.5, textDecoration: "none", fontFamily: "'Inter', sans-serif",
+                letterSpacing: "0", whiteSpace: "nowrap",
               }}>Help Unlock the Match</a>
           </div>
         </div>
@@ -867,55 +873,115 @@ export default function App() {
         {!active ? (
           <>
             {/* HERO */}
-            <div style={{ padding: "48px 0 32px", textAlign: "center" }}>
-              <div style={{
-                display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 800,
-                fontSize: 10.5, letterSpacing: 2.2, textTransform: "uppercase", padding: "5px 14px",
-                borderRadius: 20, marginBottom: 16, fontFamily: "'Museo Slab', 'Rockwell', serif",
-              }}>
-                BINARY MATCH · UNLOCK $2.5M BY JUNE 30, 2026
-              </div>
-              <h1 style={{
-                fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 900, color: c.navy, fontFamily: "'Oswald', sans-serif",
-                lineHeight: 1.1, margin: "0 0 14px 0", textTransform: "uppercase", letterSpacing: "0.4px",
-              }}>
-                A Scalable Model for<br />
-                <span style={{ color: c.blue }}>Addressing the Literacy Crisis</span>
-              </h1>
-              <p style={{ color: c.slate, fontSize: 16.5, lineHeight: 1.72, maxWidth: 560, margin: "0 auto 28px", fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
-                One City Schools is where the world's most widely-adopted phonics program and the leading AI literacy
-                tutor are built, tested, and proven — together, <em>with</em> the students who stand to benefit most.
-              </p>
+            <div style={{ padding: "48px 0 32px" }}>
 
-              <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 22 }}>
-                <Stat n={240000} suffix="+" label="Classrooms using One City innovations" bg={c.blue} />
-                <Stat n={115} suffix="+" label="Countries reached" bg={c.navy} />
-                <Stat n={98.7} dec={1} suffix="%" label="of WI middle schools outperformed" bg={c.blue} />
+              {/* Badge + H1 — full width, centered */}
+              <div style={{ textAlign: "center", marginBottom: 32 }}>
+                <h1 style={{
+                  fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 700, color: c.navy, fontFamily: "'Inter', sans-serif",
+                  lineHeight: 1.1, margin: "0 0 12px 0", letterSpacing: "-0.03em",
+                  fontFeatureSettings: '"cv01", "cv02"',
+                }}>
+                  The School Where <span style={{ color: c.blue }}>Literacy Breakthroughs</span><br />
+                  are <span style={{ color: c.blue }}>Piloted, Proven, and Scaled</span>
+                </h1>
+                <p style={{
+                  fontSize: "clamp(15px, 2vw, 18px)", color: c.slate, fontFamily: "'Inter', sans-serif",
+                  lineHeight: 1.5, margin: 0, fontWeight: 400,
+                }}>
+                  Only <strong style={{ color: c.red }}>30%</strong> of 4th graders nationally can read at grade level. 4th grade literacy strongly predicts individual lifetime earnings, incarceration risk, and other key outcomes.
+                </p>
               </div>
 
-              {/* Partner logos */}
-              <div style={{
-                display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 12,
-                background: c.white, border: `1.5px solid ${c.border}`,
-                borderRadius: 16, padding: "20px 36px",
-              }}>
-                <div style={{
-                  color: c.slate, fontSize: 10.5, fontWeight: 700, letterSpacing: 0.8,
-                  textTransform: "uppercase",
-                }}>In Partnership With</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
-                  <div style={{ textAlign: "right", minWidth: 140 }}>
-                    <div style={{ fontWeight: 800, color: c.navy, fontSize: 14, lineHeight: 1.3, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>University of Florida</div>
-                    <div style={{ color: c.slate, fontSize: 12, fontWeight: 500 }}>Literacy Institute</div>
-                    <div style={{ color: c.blue, fontSize: 11, fontWeight: 600, marginTop: 3 }}>700,000+ classrooms</div>
+              {/* Two-column: left = subheading + stats + partners, right = Short + doc link */}
+              <div style={{ display: "flex", gap: 36, alignItems: "flex-start", flexWrap: "wrap" }}>
+
+                {/* Left column */}
+                <div style={{ flex: "1 1 380px" }}>
+                  <p style={{ color: c.slate, fontSize: 16.5, lineHeight: 1.72, margin: "0 0 8px 0", fontFamily: "'Inter', sans-serif" }}>
+                    One City Schools is a <strong style={{ color: c.navy, fontWeight: 600 }}>R&amp;D-focused public charter school</strong> in Madison, Wisconsin focused on solving this challenge. It is the lab school that incubated Project Read and where UFLI AI,{" "}
+                    <strong style={{ color: c.navy, fontWeight: 600 }}>the next generation of the world's most widely-adopted phonics program</strong>, is being built.
+                  </p>
+                  <div style={{
+                    background: "#FFFBEA", border: `1px solid #F5C40040`, borderLeft: `3px solid ${c.yellow}`,
+                    borderRadius: 8, padding: "12px 16px", margin: "0 0 24px 0",
+                  }}>
+                    <p style={{ color: c.slate, fontSize: 15, lineHeight: 1.65, margin: 0, fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
+                      To sustain operations and unlock a $2.5M match, One City must raise $1.7M by June 30, 2026.
+                    </p>
                   </div>
-                  <img src={IMGS.ufli} alt="UFLI logo" style={{ width: 180, height: 180, objectFit: "contain", flexShrink: 0 }} />
-                  <div style={{ textAlign: "left", minWidth: 140 }}>
-                    <div style={{ fontWeight: 800, color: c.navy, fontSize: 14, lineHeight: 1.3, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>Project Read</div>
-                    <div style={{ color: c.slate, fontSize: 12, fontWeight: 500 }}>AI Phonics Tutor</div>
-                    <div style={{ color: c.green, fontSize: 11, fontWeight: 600, marginTop: 3 }}>240,000+ classrooms</div>
+
+                  <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 22 }}>
+                    <Stat n={240000} suffix="+" label="Classrooms using One City innovations" bg={c.lightBlue} accent={c.blue} labelColor={c.slate} />
+                    <Stat n={98.7} dec={1} suffix="%" label="of WI middle schools outperformed" bg={c.lightBlue} accent={c.green} labelColor={c.slate} />
+                  </div>
+
+                  {/* Partner logos */}
+                  <div style={{
+                    display: "flex", flexDirection: "column", alignItems: "center", gap: 12,
+                    background: c.white, border: `1.5px solid ${c.border}`,
+                    borderRadius: 16, padding: "20px 28px",
+                  }}>
+                    <div style={{
+                      color: c.slate, fontSize: 10.5, fontWeight: 700, letterSpacing: 0.8,
+                    }}>In Partnership With</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
+                      <div style={{ textAlign: "right", minWidth: 130 }}>
+                        <div style={{ fontWeight: 800, color: c.navy, fontSize: 14, lineHeight: 1.3, fontFamily: "'Inter', sans-serif" }}>University of Florida</div>
+                        <div style={{ color: c.slate, fontSize: 12, fontWeight: 500 }}>Literacy Institute</div>
+                        <div style={{ color: c.blue, fontSize: 11, fontWeight: 600, marginTop: 3 }}>700,000+ classrooms</div>
+                      </div>
+                      <img src={IMGS.ufli} alt="UFLI logo" style={{ width: 140, height: 140, objectFit: "contain", flexShrink: 0 }} />
+                      <div style={{ textAlign: "left", minWidth: 130 }}>
+                        <div style={{ fontWeight: 800, color: c.navy, fontSize: 14, lineHeight: 1.3, fontFamily: "'Inter', sans-serif" }}>Project Read</div>
+                        <div style={{ color: c.slate, fontSize: 12, fontWeight: 500 }}>AI Phonics Tutor</div>
+                        <div style={{ color: c.green, fontSize: 11, fontWeight: 600, marginTop: 3 }}>240,000+ classrooms</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                {/* Right column — Short trailer */}
+                <div style={{ flex: "0 0 260px", minWidth: 220 }}>
+                  <div style={{
+                    background: c.navy, borderRadius: 18, padding: "18px 18px 20px",
+                    display: "flex", flexDirection: "column", alignItems: "center", gap: 14,
+                  }}>
+                    {/* Autoplay Short from 1:40 */}
+                    <div style={{
+                      width: "100%", aspectRatio: "9 / 16", borderRadius: 12, overflow: "hidden",
+                      position: "relative", background: "#000",
+                    }}>
+                      <iframe
+                        src="https://www.youtube.com/embed/sx9fqKDlA0w?autoplay=1&start=100&rel=0"
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                        style={{ width: "100%", height: "100%", border: "none", display: "block" }}
+                        title="One City Schools — 2-min Trailer"
+                      />
+                    </div>
+
+                    {/* Full documentary link */}
+                    <a
+                      href="https://www.youtube.com/watch?v=dhrpBer-vmY"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: "flex", alignItems: "center", gap: 7,
+                        color: "rgba(255,255,255,0.8)", fontSize: 12.5, fontWeight: 600,
+                        textDecoration: "none", fontFamily: "'Inter', sans-serif",
+                        borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: 14, width: "100%",
+                      }}
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={c.yellow} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="23 7 16 12 23 17 23 7" />
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                      </svg>
+                      <span>Watch the full 15-min documentary: <strong style={{ color: c.white }}>Can AI Help our Kids Read?</strong> →</span>
+                    </a>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -924,7 +990,7 @@ export default function App() {
               <div style={{ flex: "1 1 290px" }}>
                 <div style={{
                   color: c.slate, fontSize: 11, fontWeight: 700, letterSpacing: 0.9,
-                  textTransform: "uppercase", marginBottom: 10,
+                  marginBottom: 10,
                 }}>Explore the story</div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   {PATHS.map(p => <PathBtn key={p.id} path={p} onClick={() => go(p.id)} />)}
@@ -934,7 +1000,7 @@ export default function App() {
               <div style={{ flex: "1 1 270px", display: "flex", flexDirection: "column", gap: 12 }}>
                 <div style={{
                   color: c.slate, fontSize: 11, fontWeight: 700, letterSpacing: 0.9,
-                  textTransform: "uppercase", marginBottom: 10,
+                  marginBottom: 10,
                 }}>What national leaders say</div>
                 <Quote compact
                   text="UFLI is partnering with One City as a model demonstration site. One City's approach isn't just effective locally. It's a blueprint for closing achievement gaps nationally."
@@ -955,17 +1021,17 @@ export default function App() {
             <div style={{ background: c.navy, borderRadius: 18, padding: "28px 32px", textAlign: "center" }}>
               <div style={{
                 color: c.yellow, fontWeight: 700, fontSize: 11, letterSpacing: 1.5,
-                textTransform: "uppercase", marginBottom: 9, fontFamily: "'Museo Slab', 'Rockwell', serif",
+                marginBottom: 9, fontFamily: "'Inter', sans-serif",
               }}>Binary Match · Deadline: June 30, 2026</div>
-              <p style={{ color: c.white, fontSize: 17, fontWeight: 700, margin: "0 0 4px 0", fontFamily: "'Museo Slab', 'Rockwell', serif" }}>
+              <p style={{ color: c.white, fontSize: 17, fontWeight: 700, margin: "0 0 4px 0", fontFamily: "'Inter', sans-serif" }}>
                 Raise $2.5M by June 30, 2026 and an anonymous donor unlocks a full $2.5M match — a binary unlock, not a rolling match.
               </p>
               <MatchProgress />
               <a href="https://www.onecityschools.org/donate" target="_blank" rel="noopener noreferrer"
                 style={{
-                  display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 900, fontSize: 14.5,
-                  padding: "12px 32px", borderRadius: 10, textDecoration: "none", fontFamily: "'Oswald', sans-serif",
-                  letterSpacing: "1px", textTransform: "uppercase", marginTop: 16,
+                  display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 700, fontSize: 14.5,
+                  padding: "12px 32px", borderRadius: 10, textDecoration: "none", fontFamily: "'Inter', sans-serif",
+                  letterSpacing: "0.01em", marginTop: 16,
                 }}>Help Unlock the Match {"\u2192"}</a>
             </div>
           </>
@@ -974,12 +1040,13 @@ export default function App() {
             <div style={{ marginBottom: 26 }}>
               <div style={{ fontSize: 24, marginBottom: 5 }}>{PATHS.find(p => p.id === active)?.icon}</div>
               <h1 style={{
-                fontSize: "clamp(26px, 4vw, 34px)", fontWeight: 900, color: c.navy, fontFamily: "'Oswald', sans-serif",
-                margin: "0 0 5px 0", textTransform: "uppercase",
+                fontSize: "clamp(26px, 4vw, 34px)", fontWeight: 700, color: c.navy, fontFamily: "'Inter', sans-serif",
+                margin: "0 0 5px 0", letterSpacing: "-0.03em",
+                fontFeatureSettings: '"cv01", "cv02"',
               }}>
                 {PATHS.find(p => p.id === active)?.label}
               </h1>
-              <p style={{ color: c.slate, fontSize: 14.5, margin: 0, fontFamily: "'Museo Slab', 'Rockwell', serif" }}>{PATHS.find(p => p.id === active)?.tagline}</p>
+              <p style={{ color: c.slate, fontSize: 14.5, margin: 0, fontFamily: "'Inter', sans-serif" }}>{PATHS.find(p => p.id === active)?.tagline}</p>
             </div>
 
             {CONTENT[active]?.()}
@@ -987,7 +1054,7 @@ export default function App() {
             <div style={{ borderTop: `2px solid ${c.border}`, paddingTop: 26, marginTop: 40 }}>
               <div style={{
                 color: c.slate, fontSize: 11, fontWeight: 700, letterSpacing: 0.9,
-                textTransform: "uppercase", marginBottom: 12,
+                marginBottom: 12,
               }}>Explore more</div>
               <div style={{ display: "flex", gap: 9, flexWrap: "wrap" }}>
                 {PATHS.filter(p => p.id !== active).map(p => (
