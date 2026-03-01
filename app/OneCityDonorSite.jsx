@@ -893,7 +893,7 @@ export default function App() {
                 {/* Left column */}
                 <div style={{ flex: "1 1 380px" }}>
                   <p style={{ color: c.slate, fontSize: 16.5, lineHeight: 1.72, margin: "0 0 12px 0", fontFamily: "'Inter', sans-serif" }}>
-                    Only <strong style={{ color: c.red }}>30%</strong> of 4th graders nationally can read at grade level. 4th grade literacy strongly predicts individual lifetime earnings, incarceration risk, and other key outcomes.
+                    Only <strong style={{ color: c.red }}>30%</strong> of the nation's fourth graders can read at grade level, a key predictor of lifetime earnings, incarceration risk, and other key outcomes.
                   </p>
                   <p style={{ color: c.slate, fontSize: 16.5, lineHeight: 1.72, margin: "0 0 8px 0", fontFamily: "'Inter', sans-serif" }}>
                     One City Schools is a <strong style={{ color: c.navy, fontWeight: 600 }}>R&amp;D-focused public charter school</strong> in Madison, Wisconsin taking on this challenge at scale with the help of artificial intelligence. It is the lab school that incubated Project Read's AI Tutor and where UFLI AI,{" "}
