@@ -766,7 +766,7 @@ const CONTENT = {
             <span style={{ color: c.yellow }}>Your investment proves we value what closes gaps.</span>
           </p>
           <MatchProgress />
-            <a href="https://www.onecityschools.org/donate" target="_blank" rel="noopener noreferrer"
+            <a href="mailto:gwiseman@onecityschools.org?subject=Interest%20in%20Supporting%20One%20City%20Schools"
               style={{
                 display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 700, fontSize: 16,
                 padding: "14px 36px", borderRadius: 11, textDecoration: "none", fontFamily: "'Inter', sans-serif",
@@ -858,7 +858,7 @@ export default function App() {
                 cursor: "pointer", fontSize: 12, fontWeight: 600, fontFamily: "'Inter', sans-serif",
               }}>{"\u2190"} Overview</button>
             )}
-            <a href="https://www.onecityschools.org/donate" target="_blank" rel="noopener noreferrer"
+            <a href="mailto:gwiseman@onecityschools.org?subject=Interest%20in%20Supporting%20One%20City%20Schools"
               style={{
                 background: c.yellow, color: c.navy, padding: "8px 16px", borderRadius: 8,
                 fontWeight: 700, fontSize: 12.5, textDecoration: "none", fontFamily: "'Inter', sans-serif",
@@ -1024,7 +1024,7 @@ export default function App() {
                 Raise $2.5M by June 30, 2026 and an anonymous donor unlocks a full $2.5M match — a binary unlock, not a rolling match.
               </p>
               <MatchProgress />
-              <a href="https://www.onecityschools.org/donate" target="_blank" rel="noopener noreferrer"
+              <a href="mailto:gwiseman@onecityschools.org?subject=Interest%20in%20Supporting%20One%20City%20Schools"
                 style={{
                   display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 700, fontSize: 14.5,
                   padding: "12px 32px", borderRadius: 10, textDecoration: "none", fontFamily: "'Inter', sans-serif",
