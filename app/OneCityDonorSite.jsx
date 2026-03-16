@@ -458,17 +458,17 @@ function MatchProgress() {
   const fmt = (n) => n >= 1000000 ? `$${(n / 1000000).toFixed(1)}M` : `$${(n / 1000).toFixed(0)}K`;
   const remaining = MATCH_GOAL - MATCH_RAISED;
   return (
-    <div style={{ margin: "22px 0 4px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 7 }}>
+    <div style={{ margin: "10px 0 0" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 5 }}>
         <div>
-          <span style={{ color: c.yellow, fontWeight: 700, fontSize: 20, fontFamily: "'Inter', sans-serif" }}>{fmt(MATCH_RAISED)}</span>
-          <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 12, marginLeft: 6, fontFamily: "'Inter', sans-serif" }}>raised toward goal</span>
+          <span style={{ color: c.yellow, fontWeight: 700, fontSize: 17, fontFamily: "'Inter', sans-serif" }}>{fmt(MATCH_RAISED)}</span>
+          <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 11.5, marginLeft: 5, fontFamily: "'Inter', sans-serif" }}>raised</span>
         </div>
-        <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 12, fontFamily: "'Inter', sans-serif" }}>
-          {fmt(remaining)} remaining · Goal: {fmt(MATCH_GOAL)}
+        <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 11.5, fontFamily: "'Inter', sans-serif" }}>
+          {fmt(remaining)} to go · Goal: {fmt(MATCH_GOAL)}
         </div>
       </div>
-      <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 99, height: 18, overflow: "hidden", position: "relative" }}>
+      <div style={{ background: "rgba(255,255,255,0.12)", borderRadius: 99, height: 14, overflow: "hidden", position: "relative" }}>
         <div style={{
           width: `${pct}%`, height: "100%", borderRadius: 99,
           background: `linear-gradient(90deg, ${c.yellow} 0%, #f5a700 100%)`,
@@ -476,14 +476,10 @@ function MatchProgress() {
           position: "relative",
         }}>
           <span style={{
-            position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)",
-            fontSize: 10, fontWeight: 600, color: c.navy, fontFamily: "'Inter', sans-serif", whiteSpace: "nowrap",
+            position: "absolute", right: 8, top: "50%", transform: "translateY(-50%)",
+            fontSize: 9, fontWeight: 600, color: c.navy, fontFamily: "'Inter', sans-serif", whiteSpace: "nowrap",
           }}>{pct}%</span>
         </div>
-      </div>
-      <div style={{ display: "flex", justifyContent: "space-between", marginTop: 5 }}>
-        <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 10.5, fontFamily: "'Inter', sans-serif" }}>$0</span>
-        <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 10.5, fontFamily: "'Inter', sans-serif" }}>$2.5M match unlocks</span>
       </div>
     </div>
   );
@@ -887,6 +883,15 @@ export default function App() {
                 </h1>
               </div>
 
+              {/* Match CTA — compact */}
+              <div style={{ background: c.navy, borderRadius: 14, padding: "14px 28px 16px", textAlign: "center", marginBottom: 24 }}>
+                <div style={{ color: c.yellow, fontWeight: 700, fontSize: 11, letterSpacing: 1.2, marginBottom: 4, fontFamily: "'Inter', sans-serif" }}>BINARY MATCH · JUNE 30, 2026</div>
+                <p style={{ color: c.white, fontSize: 14.5, fontWeight: 600, margin: "0 0 2px 0", fontFamily: "'Inter', sans-serif", lineHeight: 1.45 }}>
+                  Raise $2.5M and an anonymous donor unlocks a full $2.5M match.
+                </p>
+                <MatchProgress />
+              </div>
+
               {/* Two-column: left = subheading + stats + partners, right = Short + doc link */}
               <div style={{ display: "flex", gap: 36, alignItems: "flex-start", flexWrap: "wrap" }}>
 
@@ -950,7 +955,7 @@ export default function App() {
                       position: "relative", background: "#000",
                     }}>
                       <iframe
-                        src="https://www.youtube.com/embed/sx9fqKDlA0w?autoplay=1&start=100&rel=0"
+                        src="https://www.youtube.com/embed/sx9fqKDlA0w?autoplay=1&start=33&rel=0"
                         allow="autoplay; fullscreen"
                         allowFullScreen
                         style={{ width: "100%", height: "100%", border: "none", display: "block" }}
@@ -1014,23 +1019,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Match CTA */}
-            <div style={{ background: c.navy, borderRadius: 18, padding: "28px 32px", textAlign: "center" }}>
-              <div style={{
-                color: c.yellow, fontWeight: 700, fontSize: 11, letterSpacing: 1.5,
-                marginBottom: 9, fontFamily: "'Inter', sans-serif",
-              }}>Binary Match · Deadline: June 30, 2026</div>
-              <p style={{ color: c.white, fontSize: 17, fontWeight: 700, margin: "0 0 4px 0", fontFamily: "'Inter', sans-serif" }}>
-                Raise $2.5M by June 30, 2026 and an anonymous donor unlocks a full $2.5M match — a binary unlock, not a rolling match.
-              </p>
-              <MatchProgress />
-              <a href="mailto:gwiseman@onecityschools.org?subject=Interest%20in%20Supporting%20One%20City%20Schools"
-                style={{
-                  display: "inline-block", background: c.yellow, color: c.navy, fontWeight: 700, fontSize: 14.5,
-                  padding: "12px 32px", borderRadius: 10, textDecoration: "none", fontFamily: "'Inter', sans-serif",
-                  letterSpacing: "0.01em", marginTop: 16,
-                }}>Help Unlock the Match {"\u2192"}</a>
-            </div>
           </>
         ) : (
           <div style={{ paddingTop: 38 }}>
